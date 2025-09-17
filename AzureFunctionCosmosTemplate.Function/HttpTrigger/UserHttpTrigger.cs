@@ -5,6 +5,7 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System.Net;
 
 namespace AzureFunctionCosmosTemplate.Function.HttpTrigger;
@@ -49,6 +50,7 @@ internal class UserHttpTrigger
 
     [Function("get-user-by-id")]
     [OpenApiOperation(operationId: "get-user-by-id", tags: ["Users"], Description = "Method to get user by id")]
+    [OpenApiParameter(name: "id", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "The unique identifier of the user")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(UsersDto), Description = "Success")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.NotFound, contentType: "text/plain", bodyType: typeof(string), Description = "User not found")]
     public async Task<HttpResponseData> GetUserByIdAsync(
@@ -122,6 +124,7 @@ internal class UserHttpTrigger
 
     [Function("update-user")]
     [OpenApiOperation(operationId: "update-user", tags: ["Users"], Description = "Method to update an existing user")]
+    [OpenApiParameter(name: "id", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "The unique identifier of the user to update")]
     [OpenApiRequestBody("application/json", typeof(UsersDto), Description = "User data")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(UsersDto), Description = "User updated successfully")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.NotFound, contentType: "text/plain", bodyType: typeof(string), Description = "User not found")]
@@ -170,6 +173,7 @@ internal class UserHttpTrigger
 
     [Function("delete-user")]
     [OpenApiOperation(operationId: "delete-user", tags: ["Users"], Description = "Method to delete a user")]
+    [OpenApiParameter(name: "id", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "The unique identifier of the user to delete")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.NoContent, contentType: "text/plain", bodyType: typeof(string), Description = "User deleted successfully")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.NotFound, contentType: "text/plain", bodyType: typeof(string), Description = "User not found")]
     public async Task<HttpResponseData> DeleteUserAsync(
@@ -201,6 +205,7 @@ internal class UserHttpTrigger
 
     [Function("get-user-by-email")]
     [OpenApiOperation(operationId: "get-user-by-email", tags: ["Users"], Description = "Method to get user by email")]
+    [OpenApiParameter(name: "email", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "The email address of the user to find")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(UsersDto), Description = "Success")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.NotFound, contentType: "text/plain", bodyType: typeof(string), Description = "User not found")]
     public async Task<HttpResponseData> GetUserByEmailAsync(

@@ -11,6 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionCosmosTemplate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionCosmosTemplate.Repository", "AzureFunctionCosmosTemplate.Repository\AzureFunctionCosmosTemplate.Repository.csproj", "{9477ACE6-887A-4F40-9F84-CC33F0CBF4C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.MD = Readme.MD
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B03F1C90-F37B-4960-911E-B15FEBD2B8E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionCosmosTemplate.UnitTests", "Tests\AzureFunctionCosmosTemplate.UnitTests\AzureFunctionCosmosTemplate.UnitTests.csproj", "{3E45A56C-D416-130F-A404-F6D9C990B04B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +42,16 @@ Global
 		{9477ACE6-887A-4F40-9F84-CC33F0CBF4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9477ACE6-887A-4F40-9F84-CC33F0CBF4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9477ACE6-887A-4F40-9F84-CC33F0CBF4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E45A56C-D416-130F-A404-F6D9C990B04B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E45A56C-D416-130F-A404-F6D9C990B04B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E45A56C-D416-130F-A404-F6D9C990B04B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E45A56C-D416-130F-A404-F6D9C990B04B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3E45A56C-D416-130F-A404-F6D9C990B04B} = {B03F1C90-F37B-4960-911E-B15FEBD2B8E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2CE355DC-0D07-4980-AE1B-EA3D2A943712}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appName": {
+            "value": "azurefunc-cosmos-template"
+        },
+        "location": {
+            "value": "East US"
+        },
+        "runtime": {
+            "value": "dotnet"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "cosmosDbAccountName": {
+            "value": "cosmos-template-db"
+        },
+        "cosmosDatabaseName": {
+            "value": "UserManagementDB"
+        },
+        "appInsightsName": {
+            "value": "appi-template"
+        }
+    }
+}
